@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  redis-node-0:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8910:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
+
+  redis-node-1:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8911:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
+
+  redis-node-2:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8912:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
+
+  redis-node-3:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8913:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
+
+  redis-node-4:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8914:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
+
+  redis-node-5:
+    image: docker.io/bitnami/redis-cluster:latest
+    ports:
+      - '8915:6379'
+    environment:
+      - 'ALLOW_EMPTY_PASSWORD=yes'
+      - 'REDIS_CLUSTER_REPLICAS=1'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+      - 'REDIS_CLUSTER_CREATOR=yes'
+      - 'REDIS_ALLOW_REMOTE_CONNECTIONS=yes'
